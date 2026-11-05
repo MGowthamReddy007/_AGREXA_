@@ -1,0 +1,37 @@
+# Render Blueprint — AGREXA full-stack (Express + Supabase + AI Pest Finder)
+# Deploy link: https://render.com/deploy?repo=https://github.com/MGowthamReddy007/agrexaa
+
+services:
+  - type: web
+    name: agrexa
+    runtime: node
+    plan: free
+    branch: main
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      # Paste your Groq key when Render asks for it (leave sync:false in YAML)
+      - key: GROQ_API_KEY
+        sync: false
+      # Everything below is optional — app falls back gracefully when empty
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_SECURE
+        value: "false"
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: LEAD_MAIL_TO
+        value: mgowthamreddy2008@gmail.com
