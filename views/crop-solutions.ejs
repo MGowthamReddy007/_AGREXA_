@@ -1,0 +1,99 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="/">Home</a> / Crop Solutions</p>
+    <h1>Crop-specific solutions — Gadwal's guide</h1>
+    <p class="lead">Pick your crop. Get the season's pest calendar, threshold numbers that decide when to actually spray, IPM steps before chemicals, and the exact AGREXA product match.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:44px">
+  <div class="wrap">
+    <div class="grid grid-3">
+      <% const crops = [
+        ['rice','🌾','Rice','Stem borer · BPH · blast · sheath blight — the paddy big four, with grain-stage rules.'],
+        ['cotton','🧴','Cotton','Bollworm complex + sucking pests. Thresholds from pheromone traps, not guesswork.'],
+        ['chilli','🌶','Chilli','Thrips leaf-curl/murda, fruit borer, powdery mildew — act at first curled leaf.'],
+        ['groundnut','🥜','Groundnut','Tikka leaf spot & rust from 40 DAS; soil-health with bio seed treatment.'],
+        ['maize','🌽','Maize','Fall armyworm whorl protection + pre-emergence Atrazine schedule.'],
+        ['jowar','🌿','Jowar','Shoot fly, stem borer and midge management for rabi jowar.'],
+        ['red-gram','🫘','Red Gram','Pod borers (Helicoverpa + pod fly, Maruca) with bird perches and trap cropping.'],
+        ['vegetables','🥒','Vegetables','Tomato, bhendi, brinjal, cabbage — fruit borers, whitefly and mildews.'],
+        ['fruits','🥭','Fruit Orchards','Mango hopper, pomegranate thrips/anar, citrus canker and leaf-eating caterpillars.']
+      ] %>
+      <% crops.forEach(([slug, icon, name, desc]) => { %>
+        <a class="card" href="/crop-solutions#<%= slug %>">
+          <div class="icon"><%= icon %></div>
+          <h3><%= name %></h3><p><%= desc %></p>
+          <span class="card-link">Open guide</span>
+        </a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<hr class="furrow">
+
+<section class="section tint" id="guides">
+  <div class="wrap">
+    <span class="eyebrow">Integrated Pest Management</span>
+    <h2 style="margin-bottom:22px">IPM in one page — the order that saves money</h2>
+    <div class="steps">
+      <div class="step"><div><h3>Clean field, before anything else</h3><p>Deep ploughing where needed, summer ploughing of bollworm pupae, stubble destruction, balanced FYM composted with Trichoderma.</p></div></div>
+      <div class="step"><div><h3>Seed &amp; soil treatment first</h3><p>Pseudomonas/Trichoderma seed treatment before sowing — the cheapest crop insurance you can buy.</p></div></div>
+      <div class="step"><div><h3>Monitor — 2 field walks a week</h3><p>Count on defined thresholds (egg masses/m², moths/trap, % leaf curl). No spray before the number says so.</p></div></div>
+      <div class="step"><div><h3>Biological control layer</h3><p>Ladybirds, Chrysoperla, Trichogramma releases, Bt and neem sprays. Keep water bodies and bees out of spray paths.</p></div></div>
+      <div class="step"><div><h3>Protective chemistry, only on threshold</h3><p>Right product, right dose (ml/L + 200 L water per acre), rotated active ingredients. Full PPE, never more than 2 sprays of one active per season.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="center-head" style="margin-bottom:26px">
+      <span class="eyebrow">Seasonal pest calendar</span>
+      <h2>Kharif + Rabi window plan — Gadwal district</h2>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="table">
+        <tr><th>Crop</th><th>Jun–Aug (kharif early)</th><th>Sep–Oct (kharif late)</th><th>Nov–Mar (rabi)</th><th>Apr–May (summer)</th></tr>
+        <tr><td>Rice</td><td>Stem borer dead hearts · hispa</td><td>BPH · sheath blight · leaf folder</td><td><em>(rabi rice)</em> blast at tillering &amp; neck blast at 50% flowering</td><td>Field prep, stale seedbed</td></tr>
+        <tr><td>Cotton</td><td>Aphids/jassids seedling stage</td><td>Square/boll formation: bollworm peaks — gate sprays on trap counts</td><td>Late pink bollworm rounds before 3rd-pick</td><td>Stubble shredded, summer trap crop cleaned</td></tr>
+        <tr><td>Chilli</td><td>Transplant stress, whitefly start</td><td>Thrips leaf-curl peak — weekly scouting</td><td>Fruit borer + powdery mildew at fruiting</td><td>Dry-season nursery hygiene</td></tr>
+        <tr><td>Groundnut</td><td>Sowing + Trichoderma seed treat</td><td>Tikka from 40 DAS, rust watch</td><td><em>(rabi GN)</em> leaf miner, Spodoptera</td><td>White grub correction fields</td></tr>
+        <tr><td>Maize/Jowar</td><td>FAW generation 1 — whorl scout 2×/week</td><td>Stem borer, cob worm</td><td>Rabi jowar shoot fly at seedling</td><td>Fodder jowar: armyworm watch</td></tr>
+        <tr><td>Red gram</td><td>Sowing, aphid watch</td><td>Helicoverpa at flowering + Maruca</td><td>Pod fly peak — timely single spray</td><td>Harvest, field cleaning</td></tr>
+      </table>
+    </div>
+    <p class="booking-note" style="margin-top:18px">Calendars are advisory windows based on typical Gadwal district conditions — confirm thresholds by scouting your own field or send us photos on WhatsApp.</p>
+  </div>
+</section>
+
+<section class="section husk" id="rice">
+  <div class="wrap split" style="align-items:start">
+    <div>
+      <span class="eyebrow">Visual decision aid</span>
+      <h2>Is it time to spray? The 3-zone check</h2>
+      <p class="lead" style="margin-top:10px">Draw an imaginary diagonal across your field at sunrise. Sample every 10 m.</p>
+      <div class="pf-cards" style="margin-top:20px">
+        <div class="pf-block"><h4><span class="dot" style="background:var(--leaf)"></span>Green zone</h4><p>Pest counts below threshold — do nothing today. Save 100% of spray cost. Re-check in 3 days.</p></div>
+        <div class="pf-block"><h4><span class="dot" style="background:var(--amber)"></span>Amber zone</h4><p>Nearing threshold — start neem/Bt rotation, release Trichogramma, tighten monitoring to daily.</p></div>
+        <div class="pf-block"><h4><span class="dot" style="background:#B4552A"></span>Red zone</h4><p>Threshold crossed — labelled product at full correct dose, complete PPE, respect pre-harvest interval.</p></div>
+      </div>
+      <a class="btn btn-green" style="margin-top:22px" href="/pest-finder">Put symptoms into the AI Pest Finder</a>
+    </div>
+    <div class="callout">
+      <h3>Farmer-friend chart symbols</h3>
+      <table class="table" style="background:#fff;border:1px solid var(--line);border-radius:10px">
+        <tr><th>Symbol</th><th>Meaning</th></tr>
+        <tr><td>🌾 🧴 🌶 🥜 🌽 🫘</td><td>Crop name (rice, cotton, chilli, groundnut, maize/jowar, red gram)</td></tr>
+        <tr><td>🐛 🍄 🌍</td><td>Insect category · fungal disease · biopesticide line</td></tr>
+        <tr><td>ml/L → L/acre</td><td>Dose given for both knapsack &amp; full acre</td></tr>
+        <tr><td>PHI 7/14/21</td><td>Days to wait after spray before harvest</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

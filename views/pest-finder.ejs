@@ -1,0 +1,84 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<style>
+  html{scroll-behavior:smooth}
+</style>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="/">Home</a> / AI Pest Finder</p>
+    <h1>What attacked my crop?</h1>
+    <p class="lead">Describe <b>crop + symptoms</b>. Our advisor returns the pest identification, severity, application protocol, dosage &amp; mixing, safety, IPM and tips. Saved automatically for analytics and follow-up help.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:40px">
+  <div class="wrap pf-grid">
+    <form class="pf-panel" id="pf-form">
+      <h3>Tell us the problem</h3>
+      <div class="field" style="margin-bottom:14px">
+        <label for="crop"><span data-i18n="pf.crop">Crop</span></label>
+        <select id="crop" name="crop">
+          <option value="rice">🌾 Rice (వరి)</option>
+          <option value="cotton">🧴 Cotton (పత్తి)</option>
+          <option value="chilli">🌶 Chilli (మిర్చి)</option>
+          <option value="groundnut">🥜 Groundnut (వేరుసనగ)</option>
+          <option value="maize">🌽 Maize (మొక్కజొన్న)</option>
+          <option value="jowar">🌿 Jowar (జొన్న)</option>
+          <option value="red-gram">🫘 Red Gram (కంది)</option>
+          <option value="tomato">🍅 Tomato (టమాటా)</option>
+          <option value="vegetables">🥒 Other Vegetables (కూరగాయలు)</option>
+          <option value="fruits">🥭 Fruit orchards (పండ్ల తోట)</option>
+          <option value="pulses">🫘 Other pulses (పప్పుదినులు)</option>
+          <option value="all">🧑‍🌾 Other / not sure</option>
+        </select>
+      </div>
+      <div class="field" style="margin-bottom:14px">
+        <label for="symptoms"><span data-i18n="pf.symptoms">What symptoms do you see?</span> *</label>
+        <textarea id="symptoms" name="symptoms" rows="4" required placeholder="e.g. yellow patches from leaf tips, holes in bolls, white curling leaves…"></textarea>
+      </div>
+      <div class="field" style="margin-bottom:14px">
+        <label for="pest"><span data-i18n="pf.pestHint">Your guess of the pest (optional)</span></label>
+        <input id="pest" name="pest" placeholder="e.g. pink bollworm, tikka leaf spot…">
+      </div>
+      <div class="field" style="margin-bottom:14px">
+        <label>Language of advice</label>
+        <select id="lang" name="language">
+          <option value="en">English</option>
+          <option value="te">తెలుగు</option>
+          <option value="hi">हिन्दी</option>
+        </select>
+      </div>
+      <div class="field" style="margin-bottom:10px">
+        <label><span data-i18n="pf.brain">Choose the brain</span></label>
+        <div class="model-picker" id="model-picker">
+          <label class="on"><input type="radio" name="model" value="" checked>⚡ Built-in agro engine <em style="color:var(--ink-2);font-style:normal">— instant, free, always on</em></label>
+        </div>
+        <p class="form-note" data-i18n="pf.engineTip">The built-in engine answers instantly and free. If an LLM key is configured on the server, those models appear here.</p>
+      </div>
+      <details style="margin:14px 0 4px">
+        <summary style="font-weight:600;cursor:pointer;font-size:.9rem;color:var(--leaf-deep)"><span data-i18n="pf.fill">Capture contact (optional)</span></summary>
+        <div class="form" style="margin-top:12px">
+          <input name="name" placeholder="Name" style="width:100%;padding:10px 13px;border:1.5px solid var(--line);border-radius:9px;font:inherit">
+          <input name="phone" placeholder="Phone" style="width:100%;padding:10px 13px;border:1.5px solid var(--line);border-radius:9px;font:inherit">
+          <input name="email" type="email" placeholder="Email" style="width:100%;padding:10px 13px;border:1.5px solid var(--line);border-radius:9px;font:inherit">
+        </div>
+      </details>
+      <button class="btn btn-green" type="submit" style="width:100%;justify-content:center;margin-top:16px;" id="pf-btn"><span data-i18n="pf.analyze">Get Recommendation</span></button>
+    </form>
+
+    <div id="pf-out">
+      <div class="callout" id="pf-wait">
+        <h3>Your 8-point report appears here</h3>
+        <ul class="check-list" style="margin-top:14px">
+          <li>Pest / disease identified</li><li>Severity of attack</li><li>Application protocol</li>
+          <li>Dosage &amp; mixing instructions</li><li>Safety precautions</li><li>IPM plan</li>
+          <li>Additional tips for the crop</li><li>Matched AGREXA products</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+<script src="/js/pest-finder.js" defer></script>

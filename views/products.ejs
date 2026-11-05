@@ -1,0 +1,42 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="/">Home</a> / Products</p>
+    <h1>Product portfolio</h1>
+    <p class="lead">28 labelled formulations — insecticides, herbicides, fungicides and biopesticides. Every card shows the real active ingredient, real dose and real pack sizes. Registration number and price appear on the pack.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:40px">
+  <div class="wrap">
+    <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:26px">
+      <input id="q" type="search" placeholder="Search by product name, active ingredient or pest…" aria-label="Search products" style="flex:1;min-width:260px;padding:12px 16px;border:1.5px solid var(--line);border-radius:10px;font:inherit">
+      <div id="cat-filters" style="display:flex;gap:9px;flex-wrap:wrap">
+        <button class="btn btn-green btn-sm" data-cat="all">All</button>
+        <button class="btn btn-line btn-sm" data-cat="insecticide">🐛 Insecticides</button>
+        <button class="btn btn-line btn-sm" data-cat="herbicide">🌿 Herbicides</button>
+        <button class="btn btn-line btn-sm" data-cat="fungicide">🍄 Fungicides</button>
+        <button class="btn btn-line btn-sm" data-cat="biopesticide">🌍 Biopesticides</button>
+      </div>
+    </div>
+    <p id="count" style="color:var(--ink-2);font-size:.9rem;margin-bottom:18px"></p>
+    <div class="grid grid-3" id="product-grid" aria-live="polite"></div>
+    <div id="empty" style="display:none" class="callout"><b>No match.</b> Try a pest name ("thrips"), an ingredient ("mancozeb") or browse All.</div>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap">
+    <h2 style="margin-bottom:18px">Reading a label right</h2>
+    <div class="grid grid-3">
+      <div class="card"><h3>What's an active ingredient?</h3><p>The molecule that actually does the work. "Emamectin benzoate 5% SG" means every gram of granule carries 5% active ingredient — the rest is carrier. Two brands with the same active can be compared fairly on price per active gram.</p></div>
+      <div class="card"><h3>ML per litre, grams per acre</h3><p>We always state dose both ways: small for a 15 L knapsack (ml/g per litre), large for the whole acre. Never guess between them — open the product page.</p></div>
+      <div class="card"><h3>Registration &amp; price</h3><p>CIB&amp;RC registration number and the maximum retail price are printed on every AGREXA pack. Buying unregistered stock is illegal and unsafe — ask your dealer to show the number.</p></div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+<script src="/js/products.js" defer></script>

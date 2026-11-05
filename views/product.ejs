@@ -1,0 +1,73 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="/products">Products</a> / <%= product.category %></p>
+    <h1><%= product.name %></h1>
+    <p class="lead"><%= product.active_ingredient %></p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+      <span class="mono-tag"><%= product.category %></span>
+      <span class="mono-tag">Pack: <%= product.pack_sizes %></span>
+      <span class="mono-tag">Reg. <%= product.reg_no %></span>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:44px">
+  <div class="wrap split" style="align-items:start">
+    <div>
+      <h2>Field sheet</h2>
+      <div style="overflow-x:auto;margin-top:18px">
+        <table class="table">
+          <tr><th style="width:200px">Category</th><td><%= product.category[0].toUpperCase() + product.category.slice(1) %></td></tr>
+          <tr><th>Active ingredient</th><td><strong><%= product.active_ingredient %></strong></td></tr>
+          <tr><th>Target pests / diseases</th><td><%= product.target_pests %></td></tr>
+          <tr><th>Recommended crops</th><td><%= product.target_crops %></td></tr>
+          <tr><th>Application method</th><td><%= product.application %></td></tr>
+          <tr><th>Dosage</th><td><strong><%= product.dosage %></strong></td></tr>
+          <tr><th>Pack sizes</th><td><%= product.pack_sizes %></td></tr>
+          <tr><th>Registration no.</th><td><%= product.reg_no %></td></tr>
+          <tr><th>Price</th><td><%= product.price_note %> — ask your dealer for current MRP</td></tr>
+        </table>
+      </div>
+    </div>
+    <div>
+      <div class="callout" style="margin-bottom:20px">
+        <h3>What it does</h3>
+        <p style="margin-top:8px"><%= product.description %></p>
+      </div>
+      <div class="callout" style="background:var(--amber-soft);border-color:#F0DFC2;margin-bottom:20px">
+        <h3 style="color:var(--soil-deep)">⚠ Handle right</h3>
+        <p style="margin-top:8px"><%= product.notes || 'Follow label instructions for PPE, re-entry interval and pre-harvest interval.' %></p>
+        <a class="btn btn-amber btn-sm" style="margin-top:12px" href="/safety">Full safety guidelines</a>
+      </div>
+      <div class="card">
+        <h3>Safety Data Sheet (SDS)</h3>
+        <p>Section-wise hazard, first-aid, storage and disposal data as per GHS format.</p>
+        <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+          <a class="btn btn-green btn-sm" href="/site/sds/<%= product.id %>.pdf" download>⬇ Download SDS (PDF)</a>
+          <a class="btn btn-line btn-sm" href="https://wa.me/919014791483?text=Send%20me%20the%20SDS%20for%20<%= encodeURIComponent(product.name) %>" target="_blank" rel="noopener">Get via WhatsApp</a>
+        </div>
+      </div>
+      <p class="booking-note" style="margin-top:20px">Dealers: stock enquiry — <a href="tel:+919014791483">90147 91483</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap">
+    <h2 style="margin-bottom:26px">Other products you may need</h2>
+    <div class="grid grid-4">
+      <% all.filter(p => p.id !== product.id && p.category === product.category).slice(0, 4).forEach(p => { %>
+        <a class="card" href="/products/<%= p.id %>">
+          <span class="cat-tag tag-<%= p.category %>" style="position:static;margin:0 0 12px;display:inline-block"><%= p.category %></span>
+          <h3 style="font-size:1rem"><%= p.name %></h3>
+          <p><%= p.active_ingredient %></p>
+        </a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

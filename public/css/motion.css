@@ -1,0 +1,87 @@
+/* ============================================================
+   AGREXA motion layer
+   Progressive enhancement: elements only animate when JS tags
+   them with [data-mo] AND html gets .mo (motion allowed).
+   Reduced-motion users see a fully static site.
+   ============================================================ */
+
+/* ---- reveal states (armed only when html.mo) ---- */
+html.mo [data-mo]{
+  opacity:0;
+  transform:translateY(24px);
+  transition:
+    opacity .8s cubic-bezier(.22,.61,.36,1),
+    transform .8s cubic-bezier(.22,.61,.36,1);
+  transition-delay:var(--d,0ms);
+  will-change:opacity,transform;
+}
+html.mo [data-mo="fade"]{transform:translateY(14px)}
+html.mo [data-mo="left"]{transform:translateX(-28px)}
+html.mo [data-mo="right"]{transform:translateX(28px)}
+html.mo [data-mo="scale"]{transform:scale(.94)}
+html.mo [data-mo].in{opacity:1;transform:none}
+
+/* ---- scroll progress bar ---- */
+#agx-progress{
+  position:fixed;inset:0 0 auto 0;height:3px;z-index:120;
+  background:linear-gradient(90deg,var(--leaf) 0%,var(--leaf-mid) 60%,var(--amber) 100%);
+  transform-origin:0 50%;transform:scaleX(0);
+  pointer-events:none;
+}
+
+/* ---- header compact on scroll ---- */
+header.site{transition:background .3s ease,box-shadow .3s ease}
+header.site .nav{transition:padding .3s ease}
+header.site.scrolled{background:rgba(255,255,255,.92);box-shadow:0 1px 0 rgba(0,0,0,.04)}
+header.site.scrolled .nav{padding:12px 0}
+
+/* ---- magnetic CTA (JS-driven, desktop only) ---- */
+.btn{will-change:transform}
+.btn.magnet{transition:background .2s ease,color .2s ease,box-shadow .25s ease,transform .18s cubic-bezier(.22,.61,.36,1),border-color .2s ease,filter .2s ease}
+
+/* ---- hero / page-hero parallax & intro hooks ---- */
+.hero-v{transform-origin:50% 40%;will-change:transform}
+html.mo .hero-card.in{animation:card-float 5.2s ease-in-out 1s infinite}
+@keyframes card-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.hero-eyebrow,.hero .pill,.page-hero .crumb{will-change:opacity,transform}
+
+/* ---- furrow divider: slow crop-row drift (CSS only, subtle) ---- */
+@media (prefers-reduced-motion: no-preference){
+  .furrow{animation:furrow-drift 26s linear infinite}
+  @keyframes furrow-drift{
+    from{background-position:0 0,3px 0}
+    to{background-position:64px 0,67px 0}
+  }
+}
+
+/* ---- alert strip: one-time soft pulse on load ---- */
+html.mo .alert{animation:alert-in .9s .5s cubic-bezier(.22,.61,.36,1) both}
+@keyframes alert-in{
+  0%{opacity:0;transform:translateY(16px)}
+  100%{opacity:1;transform:translateY(0)}
+}
+
+/* ---- button & card hover (hover-triggered = allowed) ---- */
+.btn:hover{transform:scale(1.04);box-shadow:0 8px 20px rgba(11,37,25,.22)}
+.btn{transition:background .2s ease,color .2s ease,box-shadow .2s ease,transform .25s cubic-bezier(.22,.61,.36,1),border-color .2s ease,filter .2s ease}
+
+/* ---- card hover lift (hover-triggered) ---- */
+.card{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.card:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(35,40,31,.12);border-color:var(--leaf-mid)}
+
+/* ---- WhatsApp FAB: gentle attention loop ---- */
+@media (prefers-reduced-motion: no-preference){
+  .wa-fab{animation:wa-breathe 3.2s ease-in-out 2s infinite}
+  @keyframes wa-breathe{
+    0%,100%{box-shadow:0 0 0 0 rgba(46,125,50,.45)}
+    60%{box-shadow:0 0 0 14px rgba(46,125,50,0)}
+  }
+}
+
+/* ---- reduced motion: everything static & visible ---- */
+@media (prefers-reduced-motion: reduce){
+  html [data-mo]{opacity:1 !important;transform:none !important;transition:none !important}
+  #agx-progress,.furrow,.wa-fab{animation:none !important}
+  .btn,.card{transition:none}
+  .btn::after{display:none}
+}

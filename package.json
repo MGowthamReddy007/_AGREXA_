@@ -1,0 +1,22 @@
+{
+    "name": "agrexa-live",
+    "version": "1.0.0",
+    "description": "AGREXA - Protecting Crops, Sustaining Futures. Full-stack site: Express + Supabase + AI Pest Finder.",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "node server.js"
+    },
+    "engines": {
+        "node": ">=18"
+    },
+    "dependencies": {
+        "@supabase/supabase-js": "^2.45.0",
+        "body-parser": "^1.20.2",
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.5",
+        "ejs": "^3.1.10",
+        "express": "^4.19.2",
+        "nodemailer": "^6.10.1"
+    }
+}

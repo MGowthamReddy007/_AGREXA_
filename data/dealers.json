@@ -1,0 +1,36 @@
+{
+  "dealers": [
+    {
+      "name": "Sri Sai Agri Inputs",
+      "place": "Gadwal",
+      "district": "Jogulamba Gadwal",
+      "state": "Telangana",
+      "phone": "919014791483",
+      "maps_query": "Gadwal, Jogulamba Gadwal, Telangana"
+    },
+    {
+      "name": "Kalyani Agro Service",
+      "place": "Ieeja (Alampur Road)",
+      "district": "Jogulamba Gadwal",
+      "state": "Telangana",
+      "phone": "919014791483",
+      "maps_query": "Ieeja, Gadwal, Telangana"
+    },
+    {
+      "name": "Vara Lakshmi Pesticides",
+      "place": "Wanaparthy",
+      "district": "Wanaparthy",
+      "state": "Telangana",
+      "phone": "919014791483",
+      "maps_query": "Wanaparthy, Telangana"
+    },
+    {
+      "name": "Basava Farmers Centre",
+      "place": "Kurnool",
+      "district": "Kurnool",
+      "state": "Andhra Pradesh",
+      "phone": "919014791483",
+      "maps_query": "Kurnool, Andhra Pradesh"
+    }
+  ]
+}

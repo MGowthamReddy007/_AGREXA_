@@ -1,0 +1,114 @@
+[
+  {
+    "name": null,
+    "phone": null,
+    "email": null,
+    "crop": "chilli",
+    "symptoms": "leaves curling and small insects under leaf, plant stunted",
+    "pest": "Mixed / early-stage pest or disease stress (needs closer look)",
+    "language": "en",
+    "model_used": "agrexa-agro-engine",
+    "is_ai": false,
+    "result": {
+      "pest_identified": "Mixed / early-stage pest or disease stress (needs closer look)",
+      "severity": "moderate",
+      "confidence": "moderate",
+      "application_protocol": "Start with a biological IPM programme (neem oil + Trichoderma/Pseudomonas) and inspect daily; escalate to a targeted chemical spray only if symptoms cross threshold.",
+      "dosage_mixing": "Neem oil 10000 ppm EC: 400 ml/acre in 200 L water, spray at evening; Trichoderma 500 g/acre with FYM for soil health.",
+      "safety_precautions": "PPE: gloves, mask, full sleeves. Spray in low-sun hours; never against wind.",
+      "ipm": "Walk the field at sunrise — photograph leaf tops and undersides from 10 random plants • Start with neem oil 10000 ppm @ 2 ml/L as a zero-residue first step • Check soil moisture — many \"diseases\" are water stress in disguise • Send clear photos to AGREXA via WhatsApp (90147 91483) for free identification",
+      "additional_tips": "A single clearly-identified pest with a labelled product almost always beats a broad-spectrum spray. If unsure of the ID, one free photo-consultation can save a full spray cost.",
+      "matched_products": [
+        {
+          "id": "agx-bio01",
+          "name": "AGREXA NemiShield 10000",
+          "category": "biopesticide"
+        },
+        {
+          "id": "agx-bio03",
+          "name": "AGREXA Trichoderma Plus 1 WP",
+          "category": "biopesticide"
+        }
+      ]
+    },
+    "created_at": "2026-11-04T08:23:16.205Z"
+  },
+  {
+    "name": null,
+    "phone": null,
+    "email": null,
+    "crop": "chilli",
+    "symptoms": "leaves curling downwards with small black insects on underside of leaves, plant growth stunted",
+    "pest": "Mixed / early-stage pest or disease stress (needs closer look)",
+    "language": "en",
+    "model_used": "agrexa-agro-engine",
+    "is_ai": false,
+    "result": {
+      "pest_identified": "Mixed / early-stage pest or disease stress (needs closer look)",
+      "severity": "moderate",
+      "confidence": "moderate",
+      "application_protocol": "Start with a biological IPM programme (neem oil + Trichoderma/Pseudomonas) and inspect daily; escalate to a targeted chemical spray only if symptoms cross threshold.",
+      "dosage_mixing": "Neem oil 10000 ppm EC: 400 ml/acre in 200 L water, spray at evening; Trichoderma 500 g/acre with FYM for soil health.",
+      "safety_precautions": "PPE: gloves, mask, full sleeves. Spray in low-sun hours; never against wind.",
+      "ipm": "Walk the field at sunrise — photograph leaf tops and undersides from 10 random plants • Start with neem oil 10000 ppm @ 2 ml/L as a zero-residue first step • Check soil moisture — many \"diseases\" are water stress in disguise • Send clear photos to AGREXA via WhatsApp (90147 91483) for free identification",
+      "additional_tips": "A single clearly-identified pest with a labelled product almost always beats a broad-spectrum spray. If unsure of the ID, one free photo-consultation can save a full spray cost.",
+      "matched_products": [
+        {
+          "id": "agx-bio01",
+          "name": "AGREXA NemiShield 10000",
+          "category": "biopesticide"
+        },
+        {
+          "id": "agx-bio03",
+          "name": "AGREXA Trichoderma Plus 1 WP",
+          "category": "biopesticide"
+        }
+      ]
+    },
+    "created_at": "2026-11-04T08:37:56.875Z"
+  },
+  {
+    "name": null,
+    "phone": null,
+    "email": null,
+    "crop": "chilli",
+    "symptoms": "leaves curling downwards with small black insects on underside of leaves, plant growth stunted, sticky shiny residue on top of leaves",
+    "pest": "Whitefly (Bemisia tabaci)",
+    "language": "en",
+    "model_used": "groq-oss-120b",
+    "is_ai": true,
+    "result": {
+      "pest_identified": "Whitefly (Bemisia tabaci)",
+      "severity": "moderate",
+      "confidence": "high",
+      "application_protocol": "Apply AGREXA Prime 17.8 SL in the early morning or late evening when the temperature is below 30 °C and wind is calm. Spray the crop until the spray film is uniform and just reaches runoff, covering both upper and lower leaf surfaces. Repeat the spray after 7–10 days if whitefly numbers are still high, and avoid spraying during flowering to protect pollinators.",
+      "dosage_mixing": "Mix 0.35 ml of PRIME 17.8 SL per litre of water (≈70 ml per acre using 200 L water). Use a knapsack sprayer with 200 L of water per acre, add the measured insecticide, shake well, and apply immediately.",
+      "safety_precautions": "Wear full PPE – gloves, long‑sleeved coveralls, mask and goggles – during mixing and spraying. Observe a 0‑day pre‑harvest interval for chilli, but wait at least 2 days before harvesting to avoid residue. Do not spray near water bodies and avoid drift onto non‑target plants.",
+      "ipm": "Set up yellow sticky traps around the field to monitor and reduce adult whiteflies. Remove heavily infested leaves and destroy them to lower the population. Encourage natural enemies such as lady beetles and lacewings by planting flowering borders, and practice balanced fertilisation to avoid excessive nitrogen that favours whitefly growth.",
+      "additional_tips": "If the infestation persists, alternate with a neem‑based spray (AGREXA NemiShield 10000) at 2 ml / L water for a biopesticide boost. Use reflective mulches or white plastic mulch to deter whiteflies from landing on plants. Rotate chilli with non‑host crops in the next season to break the pest cycle."
+    },
+    "created_at": "2026-11-04T08:48:27.910Z"
+  },
+  {
+    "name": null,
+    "phone": null,
+    "email": null,
+    "crop": "rice",
+    "symptoms": "wholes on leaf",
+    "pest": "Rice leaf folder (Cnaphalocrocis medinalis)",
+    "language": "en",
+    "model_used": "groq-oss-120b",
+    "is_ai": true,
+    "result": {
+      "pest_identified": "Rice leaf folder (Cnaphalocrocis medinalis)",
+      "severity": "moderate",
+      "confidence": "high",
+      "application_protocol": "Apply the insecticide during the early tillering to panicle initiation stage when larvae are first seen. Use a knapsack sprayer with 200 L of water per acre and spray uniformly over the canopy. Target a coverage that wets the leaf surface but avoids runoff.",
+      "dosage_mixing": "Mix 0.4 ml of AGREXA Corte 18.5 SC per litre of water, which equals about 150–180 ml per acre in 200 L water. Prepare the solution shortly before use and stir well to ensure uniform dispersion.",
+      "safety_precautions": "Wear full protective gear – gloves, long‑sleeved shirt, goggles and a mask – and avoid breathing spray mist. Do not spray near water bodies or during windy conditions. Observe a pre‑harvest interval of at least 14 days and follow all label warnings.",
+      "ipm": "Practice synchronized planting and maintain a water depth of 5–7 cm to discourage leaf folder egg laying. Remove weeds and crop residues that can harbor larvae, and use resistant rice varieties where available. Scout fields weekly and combine chemical control with cultural measures.",
+      "additional_tips": "If leaf folder pressure remains high, a second spray can be made after 7–10 days. For added protection, a light spray of AGREXA NemiShield 10000 (2 ml per litre) can be applied as a biopesticide safe for all growth stages."
+    },
+    "created_at": "2026-11-04T08:54:46.753Z"
+  }
+]

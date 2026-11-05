@@ -1,0 +1,109 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="/">Home</a> / Farmer Resources</p>
+    <h1>Pest gallery, FAQs, training &amp; dealer locator</h1>
+    <p class="lead">Everything a farmer (or dealer advising farmers) needs before spending a rupee on a spray.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:44px" id="gallery">
+  <div class="wrap">
+    <div class="center-head" style="margin-bottom:28px">
+      <span class="eyebrow">Pest identification gallery</span>
+      <h2>Learn it before it eats it</h2>
+    </div>
+    <div class="grid grid-4">
+      <% const pests = [
+        ['🐛','Yellow stem borer','Rice · dead hearts before flowering, white ears after.'],
+        ['🦋','Pink bollworm','Cotton · rosette flowers, interlocule feed; trap it with pheromones.'],
+        ['🪲','Fall armyworm','Maize/jowar · windowing + sawdust frass in whorls.'],
+        ['🪰','Helicoverpa','Pulses/tomato · big green caterpillar in pods/fruit.'],
+        ['🟢','Chilli thrips','Chilli · upward leaf curl (murda), shiny leaf undersides.'],
+        ['🟤','Tikka leaf spot','Groundnut · dark circles with yellow halos after 40 days.'],
+        ['🟠','Leaf rust','Cereals/groundnut · raised orange pustules rub off on fingers.'],
+        ['⚪','Powdery mildew','Mango/chilli/veg · white talc-like coat on leaf tops.']
+      ] %>
+      <% pests.forEach(([icon, name, desc]) => { %>
+        <div class="pest-card">
+          <div class="ph"><span><%= icon %></span></div>
+          <div class="body"><b style="font-size:.95rem"><%= name %></b><p><%= desc %></p></div>
+        </div>
+      <% }) %>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:24px;flex-wrap:wrap">
+      <a class="btn btn-green btn-sm" href="/pest-finder">Take symptoms into the AI finder</a>
+      <a class="btn btn-line btn-sm" href="https://wa.me/919014791483?text=Here%20is%20my%20pest%20photo%20for%20free%20ID" target="_blank" rel="noopener">Send a photo for free ID</a>
+    </div>
+  </div>
+</section>
+<hr class="furrow">
+
+<section class="section tint" id="faq">
+  <div class="wrap split" style="align-items:start">
+    <div>
+      <span class="eyebrow">Knowledge hub</span>
+      <h2 style="margin-bottom:20px">Questions farmers ask us most</h2>
+      <div class="acc">
+        <details open><summary>How do I calculate how much product to buy for my acre?</summary><div class="a-body">Dose per acre is printed on each product page (e.g. Emamectin 80–100 g/acre). Knapsack dose is per 15 L tank. Buy 1 packet above your acre count — under-dosing is the top cause of spray failure.</div></details>
+        <details><summary>My spray didn't work. Was it fake product?</summary><div class="a-body">Usually not. The top failures are: wrong pest identification, spray done too late (larvae already inside bolls/fruit), wrong dose, or nozzles producing a coarse drench instead of fine coverage. Send us photos before blaming the bottle.</div></details>
+        <details><summary>Can I mix two pesticides together?</summary><div class="a-body">Only listed compatible tank-mixes. When in doubt, jar-test both in a glass — cloudiness/curdling means no. Never mix biopesticides (Trichoderma/Beauveria) with chemical fungicides.</div></details>
+        <details><summary>How many days after spray can I harvest?</summary><div class="a-body">That's the pre-harvest interval (PHI) — 7 to 21 days depending on product and crop, printed on the label. Harvesting earlier puts residues on your food and breaks export rules.</div></details>
+        <details><summary>Are biopesticides strong enough alone?</summary><div class="a-body">In early/low-pressure stages, yes — and they keep beneficial insects alive. Under heavy red-zone pressure, IPM combines one targeted chemical with the bio programme.</div></details>
+        <details><summary>Do you sell directly to farmers?</summary><div class="a-body">Our primary channel is the dealer network to keep prices fair and advice local. Farmers can always call/WhatsApp 90147 91483 for the nearest AGREXA dealer.</div></details>
+      </div>
+    </div>
+    <div id="training">
+      <span class="eyebrow">Training &amp; workshops</span>
+      <h3 style="color:var(--leaf-deep);font-size:1.3rem;margin-bottom:14px">Learn with us — free for farmer groups</h3>
+      <div class="grid" style="gap:14px">
+        <div class="card"><h3>🌾 Field IPM workshop (offline)</h3><p>Half-day session in your village: scouting, thresholds, PPE demo. 25+ farmers. We bring the sprayers, you bring the questions.</p></div>
+        <div class="card"><h3>💻 Evening advisory call (online)</h3><p>Monthly crop-hour on WhatsApp video for dealer staff + progressive farmers — pest of the fortnight, live dosage clinic.</p></div>
+        <div class="card"><h3>🏪 Dealer certification</h3><p>Storage discipline, legal labelling, prescription hygiene. Certified dealers get priority allocation in peak windows.</p></div>
+      </div>
+      <p class="booking-note" style="margin-top:16px">Book any of the above: call <b>90147 91483</b> or WhatsApp "TRAINING + village name".</p>
+      <video style="margin-top:0" class="map-frame" width="100%" height="auto" poster="/site/hero.svg" muted loop playsinline preload="none">
+        <source src="/site/tutorial-placeholder.mp4" type="video/mp4">
+      </video>
+      <p class="form-note" style="margin-top:8px">Video tutorials: placeholder slot — training recordings will be published here.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="dealers">
+  <div class="wrap">
+    <div class="center-head" style="margin-bottom:24px">
+      <span class="eyebrow">Dealer locator</span>
+      <h2>Where to buy AGREXA</h2>
+    </div>
+    <div class="split" style="align-items:start">
+      <div>
+        <table class="table" id="dealer-table">
+          <tr><th>Dealer</th><th>Place</th><th>District</th><th>Contact</th></tr>
+        </table>
+      </div>
+      <div>
+        <div class="map-frame"><iframe title="AGREXA dealer region map — Gadwal" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Gadwal,+Jogulamba+Gadwal,+Telangana&output=embed"></iframe></div>
+        <a class="btn btn-soil" style="margin-top:18px" href="/dealer">Apply to become a dealer</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+<script>
+(async () => {
+  const table = document.getElementById('dealer-table');
+  if (!table) return;
+  try {
+    const { dealers } = await (await fetch('/api/dealers')).json();
+    dealers.forEach((d) => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td><b>${d.name}</b></td><td>${d.place}</td><td>${d.district}</td><td><a class="btn btn-green btn-sm" href="tel:0${d.phone}" style="padding:7px 12px">Call</a> <a href="https://www.google.com/maps?q=${encodeURIComponent(d.maps_query)}" target="_blank" rel="noopener">Map ↗</a></td>`;
+      table.appendChild(tr);
+    });
+  } catch {}
+})();
+</script>

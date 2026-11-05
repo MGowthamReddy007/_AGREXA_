@@ -1,0 +1,54 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E9F5EA"/><stop offset="1" stop-color="#FDF8EC"/>
+    </linearGradient>
+    <linearGradient id="f1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3E9142"/><stop offset="1" stop-color="#12352A"/></linearGradient>
+    <linearGradient id="f2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5D4037"/><stop offset="1" stop-color="#3E2723"/></linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#sky)"/>
+  <circle cx="512" cy="96" r="46" fill="#E8A93E" opacity=".9"/>
+  <circle cx="512" cy="96" r="60" fill="#E8A93E" opacity=".25"/>
+  <path d="M0 250 L640 250 L640 480 L0 480 Z" fill="#DFF0DC"/>
+  <path d="M0 275 L640 260 L640 480 L0 480 Z" fill="url(#f1)" opacity=".32"/>
+  <!-- furrow rows -->
+  <g stroke="#B9D7B4" stroke-width="5" opacity=".8">
+    <path d="M-20 300 C 180 292 460 292 660 300" fill="none"/>
+    <path d="M-20 330 C 180 322 460 322 660 330" fill="none"/>
+    <path d="M-20 362 C 180 354 460 354 660 362" fill="none"/>
+    <path d="M-20 398 C 180 390 460 390 660 398" fill="none"/>
+    <path d="M-20 440 C 180 432 460 432 660 440" fill="none"/>
+  </g>
+  <!-- crop plants -->
+  <g fill="#0B2519">
+    <g transform="translate(80 330)"><path d="M0 30 C 0 10 6 2 8 -6 C 10 4 12 14 12 30 Z"/><path d="M6 30 C 6 14 14 8 18 2 C 18 14 14 22 6 30 Z" opacity=".8"/></g>
+    <g transform="translate(190 320)"><path d="M0 36 C 0 12 7 2 10 -8 C 12 5 14 17 14 36 Z"/><path d="M7 36 C 7 16 17 9 22 2 C 22 16 17 26 7 36 Z" opacity=".8"/></g>
+    <g transform="translate(300 330)"><path d="M0 30 C 0 10 6 2 8 -6 C 10 4 12 14 12 30 Z"/><path d="M6 30 C 6 14 14 8 18 2 C 18 14 14 22 6 30 Z" opacity=".8"/></g>
+    <g transform="translate(430 318)"><path d="M0 38 C 0 13 7 2 10 -9 C 12 5 15 18 15 38 Z"/><path d="M7 38 C 7 17 18 9 23 2 C 23 17 18 27 7 38 Z" opacity=".8"/></g>
+    <g transform="translate(550 330)"><path d="M0 32 C 0 10 6 2 8 -6 C 10 4 12 14 12 32 Z"/><path d="M6 32 C 6 15 14 8 19 2 C 19 15 14 24 6 32 Z" opacity=".8"/></g>
+  </g>
+  <!-- farmer -->
+  <g transform="translate(238 190)">
+    <rect x="26" y="52" width="17" height="60" rx="8" fill="#5D4037"/>
+    <rect x="52" y="52" width="17" height="60" rx="8" fill="#5D4037"/>
+    <rect x="24" y="46" width="21" height="9" rx="4" fill="#3E2723"/>
+    <rect x="50" y="46" width="21" height="9" rx="4" fill="#3E2723"/>
+    <rect x="28" y="-4" width="40" height="62" rx="15" fill="#E8A93E"/>
+    <rect x="-2" y="8" width="34" height="14" rx="7" fill="#E8A93E"/>
+    <rect x="64" y="8" width="34" height="14" rx="7" fill="#E8A93E"/>
+    <circle cx="48" cy="-18" r="15" fill="#B98A63"/>
+    <path d="M33 -24 A 15 15 0 0 1 63 -24 L 63 -19 L 33 -19 Z" fill="#EDDFC8"/>
+    <path d="M48 -40 L 20 -30 L 44 -38 Z" fill="#12352A"/>
+  </g>
+  <!-- sprayer tank -->
+  <g transform="translate(310 262)">
+    <rect x="0" y="0" width="34" height="44" rx="9" fill="#0B2519"/>
+    <rect x="6" y="-7" width="22" height="9" rx="4" fill="#12352A"/>
+    <path d="M17 -16 L 17 -38 L 37 -46" stroke="#7A9A2E" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- foreground soil band -->
+  <path d="M0 448 C 200 436 440 436 640 448 L640 480 L0 480 Z" fill="url(#f2)"/>
+  <g stroke="#8A6A5B" stroke-width="3" opacity=".5">
+    <path d="M10 462 C 210 452 430 452 630 462" fill="none"/>
+  </g>
+</svg>
